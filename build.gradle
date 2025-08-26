@@ -10,6 +10,15 @@ repositories {
 }
 
 dependencies {
+    // WAAS web application server
+    implementation 'org.apache.tomcat.embed:tomcat-embed-core:11.0.10'
+    implementation 'org.apache.tomcat.embed:tomcat-embed-jasper:11.0.10'
+
+    compileOnly 'jakarta.servlet:jakarta.servlet-api:6.1.0' // 서블릿 의존성
+    implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:3.0.2' // JSP 화면
+
+    implementation 'ch.qos.logback:logback-classic:1.5.18' // 로그 출력
+
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
