@@ -61,9 +61,11 @@ public class DispatcherServlet extends HttpServlet {
             // 6
             ModelAndView modelAndView = handlerAdapter.handle(request, response, handler);
 
-            // 8
+            // 6
             for (ViewResolver viewResolver : viewResolvers) {
                 View view = viewResolver.resolveView(modelAndView.getViewName());
+
+                // 8
                 view.rander(modelAndView.getModel(), request, response);
             }
         } catch (Exception e) {
